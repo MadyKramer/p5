@@ -9,3 +9,22 @@ class Products {
     this.altTxt = altTxt
     }
 }
+function askProducts(){
+    fetch("http://localhost:3000/api/products")
+    .then(function(res){
+        if (res.ok){
+            return res.json();
+        }
+    })
+    .then(function(value){
+        console.log(value);
+        /*for (let product of value){
+
+        }
+        return console.log(value);*/
+    })
+    .catch(function(err){
+        console.log("C'est pas ok");
+    });
+}
+askProducts();
